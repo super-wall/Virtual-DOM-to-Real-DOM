@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简单实现虚拟DOM映射到真实DOM树</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="./index.js"></script>
+  <script>
+    // 样例数据
+    const domNode = {
+      tagName: 'ul',
+      props: { class: 'list' },
+      children: [{
+        tagName: 'li',
+        children: ['toutiao']
+      }, {
+        tagName: 'li',
+        children: ['douyin']
+      }]
+    };
+    const html = window.render(domNode);
+    console.log(html)
+    document.querySelector('#app').appendChild(html);
+
+  </script>
+</body>
+</html>
